@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/books.css" />
+    <title>BooksAPI - Login</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container my-4 buttons">
+          <h1 class="display-3 text-center">
+            BooksAPI
+          </h1>
+          <div class="buttons">
+            <div class="text-center my-4">
+              <a href="index.html" class="btn btn-success" id="change-tab">LIBROS</a>
+            </div>
+            <div class="text-center my-4">
+              <a href="users.html" class="btn btn-success" id="change-tab">USUARIOS</a>
+            </div>
+           </div>
+        </div>
+        <div class="col-md-6 center_div">
+          <form id="form-login" class="mb-4">
+            <div class="form-group my-3">
+              <label for="user-name"> Usuario </label>
+              <input type="text" class="form-control" id="user-name" placeholder="Usuario" />
+            </div>
+            <div class="form-group">
+              <label for="password"> Contraseña </label>
+              <input type="password" class="form-control" id="password" placeholder="Contraseña"/>
+            </div>
+            <button type="button" class="btn btn-warning btn-md" id="login">
+              Log In
+            </button>
+            <button type="button" class="btn btn-warning btn-md" id="logout">
+              Log Out
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid hidden">
+      <div class="row mt-12">
+        <div class="col-md-6 center_div">
+          <div class="jumbotron token" >
+            <pre id="token"></pre>
+              <button type="button" class="btn btn-warning btn-md" id="copy">
+                Copy
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>

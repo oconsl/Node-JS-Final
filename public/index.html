@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/books.css" />
+    <title>BooksAPI - Libros</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container my-4 buttons">
+          <h1 class="display-3 text-center">
+            BooksAPI
+          </h1>
+        <div class="buttons">
+          <div class="text-center my-4">
+            <a href="users.html" class="btn btn-success" id="change-tab">USUARIOS</a>
+          </div>
+          <div class="text-center my-4">
+            <a href="login.html" class="btn btn-success" id="change-tab">LOGIN</a>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-6 center_div">
+          <form id="form-book" class="mb-4">
+            <div class="form-group my-3">
+              <label for="title"> Título </label>
+              <input type="text" class="form-control" id="title" />
+            </div>
+            <div class="form-group">
+              <label for="genre"> Género </label>
+              <input type="text" class="form-control" id="genre" />
+            </div>
+            <div class="form-group">
+              <label for="author"> Autor </label>
+              <input type="text" class="form-control" id="author" />
+            </div>
+            <div class="checkbox">
+              <label for="readed">
+                <input type="checkbox" id="readed" /> Leído
+              </label>
+            </div>
+            <button type="button" class="btn btn-warning btn-md" id="post">
+              POST
+            </button>
+            <button type="button" class="btn btn-warning btn-md" id="put">
+              PUT
+            </button>
+            <button type="button" class="btn btn-warning btn-md" id="delete">
+              DELETE
+            </button>
+            <button type="button" class="btn btn-warning btn-md" id="get">
+              GET
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 center_div">
+            <div class="form-group">
+              <div class="checklist">
+                <div class="checkbox">
+                  <label for="id-check">
+                    <input type="checkbox" id="id-check" /> ID
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="title-check">
+                    <input type="checkbox" id="title-check" /> Título
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label for="author-check">
+                    <input type="checkbox" id="author-check" /> Autor
+                  </label>
+                </div>
+                <button type="button" class="btn btn-warning btn-md get-checklist" id="get">
+                  GET
+                </button>
+              </div>
+              <label for="book-id"> Lista </label>
+              <select name="book-ids" id="book-id" class="form-control">
+                <option value="1">Presione GET para actualizar!</option>
+              </select>
+            </div>
+        </div>
+      </div>      
+    </div>    
+    <div class="container-fluid">
+      <div class="row mt-12">
+        <div class="col-md-6 center_div">
+          <div class="jumbotron" >
+            <pre id="paragraph">Presiona GET para actualizar!</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/books.js"></script>
+  </body>
+</html>

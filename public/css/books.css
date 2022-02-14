@@ -1,0 +1,256 @@
+body {
+  background-image: url('../img/books.jpg');
+  background-attachment: fixed;
+}
+
+#get,
+#login {
+  background-color: rgb(39, 167, 39);
+  border: solid 2px rgb(39, 167, 39);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-weight: bold;
+  transition: 0.2s;
+  outline: none;
+}
+
+#delete {
+  background-color: rgb(151, 10, 10);
+  border: solid 2px rgb(151, 10, 10);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-weight: bold;
+  transition: 0.2s;
+  outline: none;
+}
+
+#put,
+#logout {
+  background-color: rgb(26, 26, 190);
+  border: solid 2px rgb(26, 26, 190);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-weight: bold;
+  transition: 0.2s;
+  outline: none;
+}
+
+#post {
+  background-color: rgb(224, 174, 8);
+  border: solid 2px rgb(224, 174, 8);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-weight: bold;
+  transition: 0.2s;
+  outline: none;
+}
+
+#copy {
+  background-color: rgb(39, 167, 39);
+  border: solid 2px rgb(39, 167, 39);
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-weight: bold;
+  transition: 0.2s;
+  outline: none;
+  margin-right: 1em;
+  width: 70px;
+}
+
+#put:hover,
+#logout:hover {
+  background-color: white;
+  color: rgb(26, 26, 190);
+  text-shadow: none;
+}
+
+#post:hover {
+  background-color: white;
+  color: rgb(224, 174, 8);
+  text-shadow: none;
+}
+
+#delete:hover {
+  background-color: white;
+  color: rgb(151, 10, 10);
+  text-shadow: none;
+}
+
+#get:hover,
+#login:hover {
+  background-color: white;
+  color: rgb(39, 167, 39);
+  text-shadow: none;
+}
+
+#copy:hover {
+  background-color: white;
+  color: rgb(39, 167, 39);
+  text-shadow: none;
+}
+
+.center_div {
+  margin: 0 auto;
+  width: 80%;
+}
+
+#post:focus,
+#get:focus,
+#delete:focus,
+#put:focus,
+a:focus {
+  box-shadow: none;
+}
+
+.center_div {
+  background-color: rgba(134, 100, 74, 0.8);
+  border-radius: 5px;
+}
+
+#change-tab {
+  background-color: rgb(8, 171, 235);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  outline: none;
+  font-weight: bold;
+  border: solid 2px rgb(8, 171, 235);
+}
+
+#change-tab:hover {
+  background-color: white;
+  color: rgb(8, 171, 235);
+  text-shadow: none;
+  font-weight: bold;
+}
+
+h1 {
+  font-weight: bold;
+  color: white;
+}
+
+label {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.token {
+  padding: 0.3em;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.token > pre {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background-color: rgb(214, 161, 100);
+  border-radius: 5px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background-color: rgb(185, 122, 51);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(214, 161, 100);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(185, 122, 51);
+  border-radius: 5px;
+}
+
+.hidden,
+.hidden:hover {
+  opacity: 0;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+a {
+  margin: 0 2em;
+}
+
+/* */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checklist > div {
+  margin-right: 25px;
+}
