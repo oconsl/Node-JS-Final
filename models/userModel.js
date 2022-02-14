@@ -21,7 +21,6 @@ const userModel = new Schema({
   },
   userName: {
     type: String,
-    lowercase: true,
     required: [true, 'Por favor ingrese su usuario.'],
     match: [
       /^[a-zA-Z0-9\u00f1\u00d1]+$/,
