@@ -29,7 +29,7 @@ const userController = (User) => {
 
         return res.status(406).send(errors);
       }
-      res.status(500).send('Ocurrió un error.');
+      res.status(500).send('An error has occurred.');
     }
   };
 
@@ -65,7 +65,7 @@ const userController = (User) => {
 
         return res.status(406).send(errors);
       }
-      res.status(500).send('Ocurrió un error.');
+      res.status(500).send('An error has occurred.');
     }
   };
 

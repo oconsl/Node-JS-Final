@@ -5,51 +5,48 @@ const { Schema } = mongoose;
 const userModel = new Schema({
   firstName: {
     type: String,
-    required: [true, 'Por favor ingrese su nombre.'],
-    match: [
-      /^[a-zA-Z\s\u00f1\u00d1]+$/,
-      'El nombre solo puede contener letras.',
-    ],
+    required: [true, 'Please enter a name.'],
+    match: [/^[a-zA-Z\s\u00f1\u00d1]+$/, 'The name must contain only letters.'],
   },
   lastName: {
     type: String,
-    required: [true, 'Por favor ingrese su apellido.'],
+    required: [true, 'Please enter a last name.'],
     match: [
       /^[a-zA-Z\s\u00f1\u00d1]+$/,
-      'El apellido solo puede contener letras.',
+      'The last name must contain only letters.',
     ],
   },
   userName: {
     type: String,
-    required: [true, 'Por favor ingrese su usuario.'],
+    required: [true, 'Please enter an user name.'],
     match: [
       /^[a-zA-Z0-9\u00f1\u00d1]+$/,
-      'El usuario solo puede tener letras y números.',
+      'The user name must contain only letters.',
     ],
     unique: true,
     sparse: true,
   },
   password: {
     type: String,
-    required: [true, 'Por favor ingrese una contraseña.'],
+    required: [true, 'Please enter a password.'],
   },
   email: {
     type: String,
-    required: [true, 'Por favor ingrese su email.'],
-    match: [/\S+@\S+\.\S+/, 'El email debe tener un formato válido.'],
+    required: [true, 'Please enter an email.'],
+    match: [/\S+@\S+\.\S+/, 'The email must to be a valid one.'],
     unique: true,
     trim: true,
     sparse: true,
   },
   address: {
     type: String,
-    required: [true, 'Por favor ingrese su dirección.'],
+    required: [true, 'Please enter an address.'],
     trim: true,
   },
   phone: {
     type: String,
-    required: [true, 'Por favor ingrese su teléfono.'],
-    match: [/^[0-9]+$/, 'El teléfono solo puede tener números.'],
+    required: [true, 'Please enter a phone number.'],
+    match: [/^[0-9]+$/, 'The phone number must contain only numbers.'],
     trim: true,
   },
 });

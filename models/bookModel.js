@@ -5,26 +5,23 @@ const { Schema } = mongoose;
 const bookModel = new Schema({
   title: {
     type: String,
-    required: [true, 'Por favor ingrese un título.'],
+    required: [true, 'Please enter a title.'],
     match: [
       /^[a-zA-Z0-9\s\u00f1\u00d1]+$/,
-      'El título solo puede contener letras o números.',
+      'The title must contain only letters and numbers.',
     ],
   },
   author: {
     type: String,
-    required: [true, 'Por favor ingrese un autor.'],
-    match: [
-      /^[a-zA-Z\s\u00f1\u00d1]+$/,
-      'El nombre del autor solo puede contener letras.',
-    ],
+    required: [true, 'Please enter an author.'],
+    match: [/^[a-zA-Z\s\u00f1\u00d1]+$/, 'The name must contain only letters.'],
   },
   genre: {
     type: String,
-    required: [true, 'Por favor ingrese un género.'],
+    required: [true, 'Please enter a genre.'],
     match: [
       /^[a-zA-Z\s\u00f1\u00d1]+$/,
-      'El género solo puede contener letras.',
+      'The genre must contain only letters.',
     ],
   },
   read: { type: Boolean },
