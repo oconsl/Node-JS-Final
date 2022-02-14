@@ -6,18 +6,27 @@ const userModel = new Schema({
   firstName: {
     type: String,
     required: [true, 'Por favor ingrese su nombre.'],
-    match: [/^[a-zA-Z\s]+$/, 'El nombre solo puede contener letras.'],
+    match: [
+      /^[a-zA-Z\s\u00f1\u00d1]+$/,
+      'El nombre solo puede contener letras.',
+    ],
   },
   lastName: {
     type: String,
     required: [true, 'Por favor ingrese su apellido.'],
-    match: [/^[a-zA-Z\s]+$/, 'El apellido solo puede contener letras.'],
+    match: [
+      /^[a-zA-Z\s\u00f1\u00d1]+$/,
+      'El apellido solo puede contener letras.',
+    ],
   },
   userName: {
     type: String,
     lowercase: true,
     required: [true, 'Por favor ingrese su usuario.'],
-    match: [/^[a-zA-Z0-9]+$/, 'El usuario solo puede tener letras y números.'],
+    match: [
+      /^[a-zA-Z0-9\u00f1\u00d1]+$/,
+      'El usuario solo puede tener letras y números.',
+    ],
     unique: true,
     sparse: true,
   },
