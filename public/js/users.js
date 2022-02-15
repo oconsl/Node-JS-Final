@@ -30,6 +30,7 @@ import fetchInterceptor from './fetchInterceptor.js';
 window.addEventListener('DOMContentLoaded', () => {
   fetchInterceptor;
 
+  // POST user
   async function postUser(evt) {
     evt.preventDefault();
 
@@ -79,6 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // GET users
   async function getUsers(evt) {
     if (evt !== null) evt.preventDefault();
 
@@ -119,6 +121,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // PUT user by id
   async function putUserById(evt) {
     evt.preventDefault();
 
@@ -168,6 +171,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // DELETE user by id
   async function deleteUserById(evt) {
     evt.preventDefault();
 
@@ -191,12 +195,14 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Just another scrollbar function :D
   const scrollInfo = (event) => {
     event.preventDefault();
     const delta = Math.sign(event.deltaY);
     paragraph.scrollLeft += delta * 100;
   };
 
+  // Only one checkbox must be checked! >:(
   const handleChecklistClick = (event) => {
     checklistOptions.forEach((div) => {
       const checkbox = div.children.item(0);
@@ -208,6 +214,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  // CUSTOM GET for each checkbox
   const handleGetChecklistClick = async () => {
     if (idCheck.checked) {
       try {

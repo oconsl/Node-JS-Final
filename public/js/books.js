@@ -166,6 +166,7 @@ window.addEventListener('DOMContentLoaded', () => {
     paragraph.scrollLeft += delta * 100;
   };
 
+  // Only one checkbox must be checked! >:(
   const handleChecklistClick = (event) => {
     checklistOptions.forEach((div) => {
       const checkbox = div.children.item(0);
@@ -177,6 +178,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  // CUSTOM GET for each checkbox
   const handleGetChecklistClick = async () => {
     if (idCheck.checked) {
       try {

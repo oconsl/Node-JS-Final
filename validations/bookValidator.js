@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const alphaSpace = new RegExp('[a-zA-Z\\s\\.\\u00f1\\u00d1]+$', 'i');
+const alphaSpace = new RegExp('[a-zA-Z\\s\\.]+$', 'i');
 
 const bodySchema = Joi.object({
   title: Joi.string().regex(alphaSpace).required(),
