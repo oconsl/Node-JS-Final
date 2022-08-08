@@ -23,8 +23,8 @@ app.all(
     secret: process.env.SIGNATURE,
     algorithms: ['HS256'],
   }).unless({
-    path: ['/api/users/login'],
+    path: ['/api/users/login'], 
   })
 );
 app.use('/api', bookRouter, userRouter);
-app.listen(8080);
+app.listen(process.env.PORT, () => console.log('App running on PORT: ', process.env.PORT));
