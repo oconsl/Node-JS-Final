@@ -17,6 +17,7 @@ const routes = (User) => {
     getUserByUserName,
     getUserById,
     userAuth,
+    registerUser
   } = userController(User);
 
   userRouter
@@ -41,6 +42,10 @@ const routes = (User) => {
   userRouter
     .route('/users/login')
     .post(validator.body(loginValidator), userAuth);
+
+  userRouter
+    .route('/users/register')
+    .post(validator.body(userValidator), registerUser);
 
   return userRouter;
 };

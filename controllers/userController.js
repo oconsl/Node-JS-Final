@@ -18,7 +18,7 @@ const userController = (User) => {
 
       await user.save();
 
-      res.status(201).json(user);
+      return res.status(201).json(user);
     } catch (error) {
       if (error.name === 'ValidationError') {
         let errors = {};
@@ -29,7 +29,7 @@ const userController = (User) => {
 
         return res.status(406).send(errors);
       }
-      res.status(500).send('An error has occurred.');
+      return res.status(500).send('An error has occurred.');
     }
   };
 
@@ -54,7 +54,7 @@ const userController = (User) => {
           },
         }
       );
-      res.status(200).json(response);
+      return res.status(200).json(response);
     } catch (error) {
       if (error.name === 'ValidationError') {
         let errors = {};
@@ -65,7 +65,7 @@ const userController = (User) => {
 
         return res.status(406).send(errors);
       }
-      res.status(500).send('An error has occurred.');
+      return res.status(500).send('An error has occurred.');
     }
   };
 
@@ -76,9 +76,9 @@ const userController = (User) => {
     try {
       await User.findByIdAndDelete(id);
 
-      res.status(202).json('The user has been deleted.');
+      return res.status(202).json('The user has been deleted.');
     } catch (error) {
-      res.status(500).json('An error has occurred.');
+      return res.status(500).json('An error has occurred.');
     }
   };
 
@@ -89,9 +89,9 @@ const userController = (User) => {
     try {
       const response = await User.findById(params.userId);
 
-      res.status(200).json(response);
+      return res.status(200).json(response);
     } catch (error) {
-      res.status(500).json('An error has occurred.');
+      return res.status(500).json('An error has occurred.');
     }
   };
 
@@ -109,7 +109,7 @@ const userController = (User) => {
 
     const response = await User.findOne(query);
 
-    res.status(200).json(response);
+    return res.status(200).json(response);
   };
 
   // Login Authenticator
@@ -127,12 +127,29 @@ const userController = (User) => {
     // Create a new Token
     token = await createToken(response);
 
-    res.status(200).json({
+    return res.status(200).json({
       userName: response.userName,
       id: response._id,
       token: token,
     });
   };
+
+  // Register User
+  const registerUser = async (req, res) => {
+    const { body } = req;
+    const response = await User.findOne({ userName: body.userName });
+    
+    if (response !== null) {
+      return res.status(401).json('User already exists.');
+    } else {
+      const user = new User(body);
+      user.password = await bcrypt.hash(user.password, 10);
+
+      await user.save();
+
+      return res.status(201).json(user);
+    }
+  }
 
   // GENERATE Token
   const createToken = async (user) => {
@@ -156,6 +173,7 @@ const userController = (User) => {
     getUserByUserName,
     getUserById,
     userAuth,
+    registerUser
   };
 };
 

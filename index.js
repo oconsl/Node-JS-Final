@@ -23,7 +23,7 @@ app.all(
     secret: process.env.SIGNATURE,
     algorithms: ['HS256'],
   }).unless({
-    path: ['/api/users/login'], 
+    path: ['/api/users/login', '/api/users/register'], 
   })
 );
 app.use('/api', bookRouter, userRouter);
