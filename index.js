@@ -6,7 +6,7 @@ const User = require('./models/userModel');
 const bookRouter = require('./routes/bookRouter')(Book);
 const userRouter = require('./routes/userRouter')(User);
 const cors = require('cors');
-const { expressjwt: jwt } = require("express-jwt");
+const expressJwt = require('express-jwt');
 require('dotenv').config();
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.all(
   '/api/*',
-  jwt({
+  expressJwt({
     secret: process.env.SIGNATURE,
     algorithms: ['HS256'],
   }).unless({
